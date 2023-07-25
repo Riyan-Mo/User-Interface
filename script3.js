@@ -13,13 +13,11 @@ window.onload=()=>{
 }
 
 function setImage(number){
-  if( (number>=0 && index<(imageNames.length-1)) || ( number<=0 && index>0 ) ){
-    index += number;
+  index+=number;
+  if(!(index>=0 && index<imageNames.length)){
+  index = 0; 
   }
-  else{
-    index=0;
-  }
-  imgElement.src = `/images/${imageNames[index]}.jpeg`
+  imgElement.src = `/images/${imageNames[index]}.jpeg`;
 }
 
 const navigationBar = (()=>{
