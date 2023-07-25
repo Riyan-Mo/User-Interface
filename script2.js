@@ -6,9 +6,7 @@ function createOverlay(){
   const overlay = document.createElement('div');
   overlay.className = "overlay";
   overlay.appendChild(createSideBar());
-  overlay.addEventListener('click', function(){
-    document.body.removeChild(overlay);
-  })
+  overlay.appendChild(blackDiv());
   document.body.appendChild(overlay);
 }
 
@@ -25,4 +23,13 @@ function exampleElements(parent){
     para.textContent = `Item ${i}`;
     parent.appendChild(para);
   }
+}
+
+function blackDiv(){
+  const div = document.createElement('div');
+  div.addEventListener('click', ()=>{
+    const [overlay] = document.getElementsByClassName("overlay");
+    document.body.removeChild(overlay);
+  })
+  return div;
 }

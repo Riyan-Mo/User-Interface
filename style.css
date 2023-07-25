@@ -71,14 +71,11 @@ a {
   left: 0px;
   right: 0px;
   top: 0px;
+  display: grid;
+  grid-template-columns: auto 1fr;
 }
 
 .sideBar {
-  position: absolute;
-  z-index: 99;
-  top: 0;
-  bottom: 0;
-  left: 0;
   display: grid;
   background-color: white;
 }
@@ -92,4 +89,58 @@ a {
 .description {
   justify-self: center;
   font-size: larger;
+}
+
+.container3 {
+  margin-top: 100px;
+  display: grid;
+  position: relative;
+  justify-content: center;
+  text-align: center;
+  gap: 3rem;
+}
+
+.imageslider {
+  display: grid;
+  position: relative;
+}
+
+.imgControl {
+  position: absolute;
+  padding: 8px;
+  background-color: rgba(255, 255, 255, 0.7);
+  color: black;
+  border-style: none;
+  top: 50%;
+}
+
+#prev {
+  left: 0;
+}
+
+#next {
+  right: 0;
+}
+
+.imageslider img {
+  width: 400px;
+  height: 300px;
+  object-fit: cover;
+}
+
+#navigationDiv {
+  position: absolute;
+  display: grid;
+  justify-content: space-around;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 80%;
+  padding: 10px;
+  z-index: 99;
+  grid-auto-flow: column;
+}
+
+#navigationDiv button {
+  padding: 10px;
 }
